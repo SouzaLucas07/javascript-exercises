@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Emprestimo - JavaScript</title>
+
+    <style>
+        .output{font-weight: bold;}
+        #payment{text-decoration: underline;}
+        #graph{border: solid black 1px;}
+        th,td{vertical-align: top;}
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Enter Loan Data:</th>
+            <td></td>
+            <th>Loan balance, Cumulative Equily, and Interest Payment</th>
+        </tr>
+        <tr>
+            <td>Amount of the Loan($):</td>
+            <td><input id="amount" onchange="caculate();"></td>
+            <td rowspan="8"> 
+                <canvas id="graph" width="400" height="250"></canvas>
+            </td>
+        </tr>
+        <tr>
+            <td>Annual Interest (%):</td>
+            <td><input id="apr" onchange="caculate();"></td>
+        </tr>
+        <tr>
+            <td>Repayment period(Years):</td>
+            <td><input id="years" onchange="calculate();"></td>
+        </tr>
+        <tr>
+            <td>Zipcode (To find lenders):</td>
+            <td><input id="zipcode" onchange="calculate();"></td>
+        </tr>
+        <tr>
+            <th>
+                Approximate Payments:
+            </th>
+            <td><button onclick="calculate();">Calculate</button></td>
+        </tr>
+        <tr>
+            <td>Monthly Payment:</td>
+            <td>
+                $<span class="output" id="payment"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Total Payment</td>
+            <td>
+                $<span class="output" id="total"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Total Interest:</td>
+            <td>$<span class="output" id="totalinterest"></span></td>
+        </tr>
+        <tr>
+            <th>
+                Sponsors:
+            </th><td colspan="2">Apply for your loan with one of these fine lenders
+                <div id="lenders"></div>
+            </td>
+        </tr>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>
